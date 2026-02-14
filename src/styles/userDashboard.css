@@ -1,0 +1,247 @@
+/* ================= MAIN WRAPPER ================= */
+
+.dashboard-wrapper {
+  padding: 50px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4ff, #f8fbff);
+  font-family: "Inter", sans-serif;
+}
+
+/* ================= TITLE ================= */
+
+.dashboard-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #111827;
+}
+
+/* ================= STAT CARDS ================= */
+
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.stat-card {
+  padding: 30px;
+  border-radius: 20px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.stat-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.stat-card h4 {
+  font-size: 14px;
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+.stat-card h3 {
+  font-size: 34px;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+/* Animated Gradient */
+.card-blue {
+  background: linear-gradient(135deg,#4f46e5,#3b82f6);
+}
+
+.card-green {
+  background: linear-gradient(135deg,#10b981,#059669);
+}
+
+.card-purple {
+  background: linear-gradient(135deg,#8b5cf6,#6d28d9);
+}
+
+/* Decorative Circle */
+.stat-card::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 120px;
+  height: 120px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+}
+
+/* ================= SECTION CARD ================= */
+
+.section-card {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 24px;
+  margin-bottom: 40px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.section-card:hover {
+  transform: translateY(-3px);
+}
+
+.section-card h3 {
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+/* ================= AVAILABLE QUIZ ================= */
+
+.quiz-item {
+  padding: 18px 20px;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+  border: 1px solid #f1f5f9;
+}
+
+.quiz-item:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transform: translateX(6px);
+}
+
+.quiz-info strong {
+  font-size: 15px;
+  color: #111827;
+}
+
+.quiz-info span {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.start-btn {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg,#3b82f6,#2563eb);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.start-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ================= RECENT ATTEMPTS ================= */
+
+.recent-card {
+  background: white;
+  padding: 22px;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.recent-card:hover {
+  transform: translateY(-5px);
+}
+
+.recent-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.recent-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: #111827;
+}
+
+.recent-date {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.recent-details {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  margin-bottom: 12px;
+  color: #6b7280;
+}
+
+.recent-score {
+  font-weight: 600;
+  color: #2563eb;
+}
+
+/* Progress Bar */
+
+.progress-bg {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg,#2563eb,#3b82f6);
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+/* ================= LEADERBOARD ================= */
+
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 18px;
+  border-radius: 14px;
+  background: white;
+  margin-bottom: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.leaderboard-item:hover {
+  transform: translateX(5px);
+}
+
+.rank {
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.rank.gold { color: #f59e0b; }
+.rank.silver { color: #9ca3af; }
+.rank.bronze { color: #d97706; }
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+  .dashboard-wrapper {
+    padding: 25px;
+  }
+
+  .recent-details {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+}

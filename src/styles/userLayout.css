@@ -1,0 +1,117 @@
+/* ================= MAIN CONTAINER ================= */
+
+.user-container {
+  display: flex;
+  height: 100vh;             /* FIX FULL SCREEN */
+  overflow: hidden;          /* PREVENT FULL PAGE SCROLL */
+  background: #f4f6fb;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ================= SIDEBAR ================= */
+
+.user-sidebar {
+  width: 260px;
+  height: 100vh;             /* FULL HEIGHT */
+  position: fixed;           /* FIXED SIDEBAR */
+  left: 0;
+  top: 0;
+  padding: 30px 20px;
+  background: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;          /* NO SCROLL */
+}
+
+/* LOGO */
+.sidebar-logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.auth-logo {
+  width: 140px;
+}
+
+/* MENU */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-item {
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #1f2937;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.sidebar-item:hover {
+  background: #2563eb;
+  color: white;
+}
+
+.sidebar-item.active {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: white;
+}
+
+/* ================= MAIN SECTION ================= */
+
+.user-main {
+  flex: 1;
+  margin-left: 260px;         /* SAME AS SIDEBAR WIDTH */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ================= NAVBAR ================= */
+
+.user-navbar {
+  height: 70px;
+  position: fixed;            /* FIX NAVBAR */
+  top: 0;
+  left: 260px;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  background: linear-gradient(to left, #accbee 0%, #e7f0fd 100%);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  z-index: 1000;
+}
+
+.nav-user {
+  font-weight: 600;
+}
+
+.logout-btn {
+  background: #ef4444;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ================= CONTENT AREA ================= */
+
+.user-content {
+  margin-top: 70px;          /* SPACE BELOW NAVBAR */
+  padding: 40px;
+  overflow-y: auto;          /* ONLY THIS SCROLLS */
+  height: calc(100vh - 70px);
+}
